@@ -45,6 +45,12 @@ def get_user_input():
                 return username, access_token
 
         st.markdown("---")
+        st.subheader("💡 사용자 이름 예시")
+        st.markdown(
+            """
+            `https://velog.io/@sin_0`이면 ID는 **sin_0**입니다!
+            """
+        )
         st.subheader("💡 Access Token 가져오는 방법")
         st.markdown(
             """
@@ -54,6 +60,7 @@ def get_user_input():
             4. `access_token`을 찾아 값을 복사합니다.
             """
         )
+
     return None, None
 
 # 사용자 입력 받기
