@@ -1,6 +1,6 @@
 #  velog-stat
 
-## 📍 Demo Image
+![image](https://github.com/user-attachments/assets/6d015a06-976f-47d9-84d3-dd2b98837aa4)
 
 ### 배포
 https://velog-stat.streamlit.app/
