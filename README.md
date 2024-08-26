@@ -3,7 +3,7 @@
 ## 📍 Demo Image
 
 ### 배포
-https://velog-view.streamlit.app/
+https://velog-stat.streamlit.app/
 
 ## 📍 사용방법
 
