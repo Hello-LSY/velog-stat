@@ -1,21 +1,44 @@
 def graphql_posts(username, limit, cursor=None) -> dict:
-  """블로그 게시물 목록 가져오는 GraphQL"""
-  return {
-    "query": "query velogPosts($input: GetPostsInput!) {\n  posts(input: $input) {\n    id\n    title\n    url_slug\n    released_at\n    updated_at\n    comments_count\n    tags\n    likes\n  }\n}\n    ",
-    "variables": {
-      "input": {
-        "cursor": cursor if cursor is not None else None,
-        "username": username,
-        "limit": limit,
-        "tag": ""
-      }
+    """블로그 게시물 목록 가져오는 GraphQL 쿼리"""
+    return {
+        "query": """
+        query velogPosts($input: GetPostsInput!) {
+          posts(input: $input) {
+            id
+            title
+            url_slug
+            released_at
+            updated_at
+            comments_count
+            tags
+            likes
+          }
+        }
+        """,
+        "variables": {
+            "input": {
+                "cursor": cursor if cursor else None,
+                "username": username,
+                "limit": limit,
+                "tag": ""
+            }
+        }
     }
-  }
 
 
 def graphql_get_status(post_id):
-  """통계 정보 가져오는 GraphQL"""
-  return {
-    "query": "query GetStats($post_id: ID!) {\n  getStats(post_id: $post_id) {\n    total\n    count_by_day {\n      count\n      day\n      __typename\n    }\n    __typename\n  }\n}\n",
-    "variables": {"post_id": post_id}
-  }
+    """통계 정보(조회수 등) 가져오는 GraphQL 쿼리"""
+    return {
+        "query": """
+        query GetStats($post_id: ID!) {
+          getStats(post_id: $post_id) {
+            total
+            count_by_day {
+              count
+              day
+            }
+          }
+        }
+        """,
+        "variables": {"post_id": post_id}
+    }
