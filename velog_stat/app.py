@@ -105,7 +105,7 @@ def show_login_screen():
     st.title("velog stat 📊")
     st.markdown("""
         **Velog 블로그**의 조회수, 댓글 수, 좋아요 수를
-        예쁘게 확인할 수 있는 미니 대시보드
+        확인할 수 있는 미니 대시보드
     """)
 
     with st.expander("아이디 & 토큰 입력 방법"):
